@@ -1,11 +1,14 @@
 <script>
 import axios from "axios";
+import AppCard from "./AppCard.vue";
 export default {
   data() {
     return {
       cards: [],
     };
   },
+
+  components: { AppCard },
 
   methods: {
     fetchCards() {
@@ -30,13 +33,13 @@ export default {
     </div>
     <div class="container">
       <div class="row g-3 row-cols-2 row-cols-md-3 row-cols-lg-5">
-        <div class="col text-center" v-for="card in cards" :key="card.id">
-          <div class="card_">
-            <img :src="card.card_images[0].image_url_small" alt="" />
-            <h6>{{ card.name }}</h6>
-            <p>{{ card.archetype }}</p>
-          </div>
-        </div>
+        <AppCard
+          v-for="card in cards"
+          :key="card.id"
+          :image_url_small="card.card_images[0].image_url_small"
+          :name="card.name"
+          :archetype="card.archetype"
+        />
       </div>
     </div>
   </section>
