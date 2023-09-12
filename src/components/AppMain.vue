@@ -1,11 +1,14 @@
 <script>
+import AppCardsList from "./cards/AppCardsList.vue";
 export default {
-  data() {
-    return {};
-  },
+  components: { AppCardsList },
 };
 </script>
 
-<template></template>
+<template>
+  <main>
+    <AppCardsList />
+  </main>
+</template>
 
 <style lang="scss" scoped></style>
