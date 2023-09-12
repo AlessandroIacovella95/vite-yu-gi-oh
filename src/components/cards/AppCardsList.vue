@@ -25,12 +25,60 @@ export default {
 
 <template>
   <section>
+    <div class="founded">
+      <span>Found 39 cards</span>
+    </div>
     <div class="container">
-      <div class="row g-4 row-cols-2 row-cols-md-3 row-cols-lg-4">
-        <div class="col" v-for="card in cards">{{ card.name }}</div>
+      <div class="row g-3 row-cols-2 row-cols-md-3 row-cols-lg-5">
+        <div class="col text-center" v-for="card in cards" :key="card.id">
+          <div class="card_">
+            <img :src="card.card_images[0].image_url_small" alt="" />
+            <h6>{{ card.name }}</h6>
+            <p>{{ card.archetype }}</p>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 </template>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+section {
+  background-color: #d48f38;
+  padding: 50px 0;
+
+  .founded {
+    background-color: #212529;
+    color: white;
+    padding: 10px 0;
+    width: 960px;
+    margin: 15px auto;
+  }
+
+  .container {
+    background-color: white;
+    .col {
+      padding-bottom: 15px;
+      .card_ {
+        height: 100%;
+        width: 168px;
+        background-color: #d48f38;
+
+        img {
+          max-width: 100%;
+        }
+
+        h6 {
+          margin-top: 10px;
+          color: white;
+          font-weight: 700;
+        }
+
+        p {
+          font-weight: 500;
+        }
+      }
+    }
+  }
+}
+</style>

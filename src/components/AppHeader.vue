@@ -9,7 +9,7 @@ export default {
 </script>
 
 <template>
-  <div class="container mt-3">
+  <div class="container my-2">
     <img class="img-fluid" src="/pngegg.png" alt="logo" />
     <h1 class="ms-3">{{ title }}</h1>
   </div>
