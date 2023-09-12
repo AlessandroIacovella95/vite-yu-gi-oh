@@ -1,28 +1,13 @@
 <script>
-import axios from "axios";
+import { store } from "../../data/store";
 import AppCard from "./AppCard.vue";
 export default {
   data() {
     return {
-      cards: [],
+      store,
     };
   },
-
   components: { AppCard },
-
-  methods: {
-    fetchCards() {
-      axios
-        .get("https://db.ygoprodeck.com/api/v7/cardinfo.php?num=20&offset=0")
-        .then((response) => {
-          this.cards = response.data.data;
-        });
-    },
-  },
-
-  created() {
-    this.fetchCards();
-  },
 };
 </script>
 
@@ -34,7 +19,7 @@ export default {
     <div class="container">
       <div class="row g-3 row-cols-2 row-cols-md-3 row-cols-lg-5">
         <AppCard
-          v-for="card in cards"
+          v-for="card in store.cards"
           :key="card.id"
           :image_url_small="card.card_images[0].image_url_small"
           :name="card.name"
