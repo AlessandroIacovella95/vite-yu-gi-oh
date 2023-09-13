@@ -1,18 +1,22 @@
 <script>
 import { store } from "../../data/store";
 import AppCard from "./AppCard.vue";
+import BaseSelect from "../BaseSelect.vue";
 export default {
   data() {
     return {
       store,
     };
   },
-  components: { AppCard },
+  components: { AppCard, BaseSelect },
 };
 </script>
 
 <template>
   <section>
+    <div class="select_container">
+      <BaseSelect />
+    </div>
     <div class="founded container">
       <span>Found 20 cards</span>
     </div>
@@ -35,6 +39,10 @@ section {
   background-color: #d48f38;
   padding: 50px 0;
 
+  .select_container {
+    margin-left: 100px;
+  }
+
   .founded {
     background-color: #212529 !important;
     color: white !important;
@@ -44,7 +52,6 @@ section {
       margin-left: 15px;
     }
   }
-
   .container {
     background-color: white;
   }
