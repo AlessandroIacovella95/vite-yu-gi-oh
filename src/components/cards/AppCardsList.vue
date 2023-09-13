@@ -13,8 +13,8 @@ export default {
 
 <template>
   <section>
-    <div class="founded">
-      <span>Found 39 cards</span>
+    <div class="founded container">
+      <span>Found 20 cards</span>
     </div>
     <div class="container">
       <div class="row g-3 row-cols-2 row-cols-md-3 row-cols-lg-5">
@@ -36,10 +36,9 @@ section {
   padding: 50px 0;
 
   .founded {
-    background-color: #212529;
-    color: white;
+    background-color: #212529 !important;
+    color: white !important;
     padding: 10px 0;
-    max-width: 1320px;
     margin: 15px auto;
     span {
       margin-left: 15px;

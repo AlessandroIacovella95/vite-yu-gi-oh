@@ -13,7 +13,8 @@ export default {
     <div class="card_">
       <img :src="image_url_small" alt="" />
       <h6>{{ name }}</h6>
-      <p>{{ archetype }}</p>
+      <p v-if="archetype">{{ archetype }}</p>
+      <p v-else class="text-dark px-2">Archetipo non definito</p>
     </div>
   </div>
 </template>
