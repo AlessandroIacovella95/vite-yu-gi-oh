@@ -21,6 +21,8 @@ export default {
 <style lang="scss" scoped>
 .col {
   padding-bottom: 15px;
+  display: flex;
+  justify-content: center;
   .card_ {
     height: 100%;
     width: 168px;

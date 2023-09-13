@@ -39,34 +39,15 @@ section {
     background-color: #212529;
     color: white;
     padding: 10px 0;
-    width: 960px;
+    max-width: 1320px;
     margin: 15px auto;
+    span {
+      margin-left: 15px;
+    }
   }
 
   .container {
     background-color: white;
-    .col {
-      padding-bottom: 15px;
-      .card_ {
-        height: 100%;
-        width: 168px;
-        background-color: #d48f38;
-
-        img {
-          max-width: 100%;
-        }
-
-        h6 {
-          margin-top: 10px;
-          color: white;
-          font-weight: 700;
-        }
-
-        p {
-          font-weight: 500;
-        }
-      }
-    }
   }
 }
 </style>
