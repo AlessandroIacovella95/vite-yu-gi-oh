@@ -3,10 +3,10 @@ import axios from "axios";
 export default {
   data() {
     return {
+      selectedArchetype: "",
       archetypes: [],
     };
   },
-
   methods: {
     fetchArchetypes() {
       axios
@@ -27,7 +27,11 @@ export default {
 </script>
 <template>
   <div>
-    <select id="archetypeSelect" @change="filterByArchetype">
+    <select
+      id="archetypeSelect"
+      @change="filterByArchetype"
+      v-model="selectedArchetype"
+    >
       <option value="">Tutti gli Archetipi</option>
       <option
         v-for="archetype in archetypes"
