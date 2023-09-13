@@ -23,6 +23,8 @@ export default {
   created() {
     this.fetchArchetypes();
   },
+
+  emits: ["archetype-selected"],
 };
 </script>
 <template>
@@ -36,7 +38,7 @@ export default {
       <option
         v-for="archetype in archetypes"
         :key="archetype"
-        :value="archetype"
+        :value="archetype.archetype_name"
       >
         {{ archetype.archetype_name }}
       </option>

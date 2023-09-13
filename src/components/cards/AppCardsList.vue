@@ -1,24 +1,21 @@
 <script>
 import { store } from "../../data/store";
 import AppCard from "./AppCard.vue";
-import BaseSelect from "../BaseSelect.vue";
 export default {
   data() {
     return {
       store,
     };
   },
-  components: { AppCard, BaseSelect },
+  components: { AppCard },
 };
 </script>
 
 <template>
   <section>
-    <div class="select_container">
-      <BaseSelect />
-    </div>
+    <div class="select_container"></div>
     <div class="founded container">
-      <span>Found 20 cards</span>
+      <span>Found cards</span>
     </div>
     <div class="container">
       <div class="row g-3 row-cols-2 row-cols-md-3 row-cols-lg-5">
