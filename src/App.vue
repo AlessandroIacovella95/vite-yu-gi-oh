@@ -4,21 +4,33 @@ import { store } from "./data/store";
 import BaseSelect from "./components/BaseSelect.vue";
 import AppHeader from "./components/AppHeader.vue";
 import AppMain from "./components/AppMain.vue";
+import AppLoader from "./components/cards/AppLoader.vue";
 
 export default {
   data() {
     return {
       store,
+      isLoading: false,
     };
   },
 
-  components: { AppHeader, AppMain, BaseSelect },
+  components: { AppHeader, AppMain, BaseSelect, AppLoader },
 
   methods: {
     fetchCards(endpoint) {
-      axios.get(endpoint).then((response) => {
-        store.cards = response.data.data;
-      });
+      this.isLoading = true;
+      axios
+        .get(endpoint)
+        .then((response) => {
+          store.cards = response.data.data;
+        })
+        .catch((error) => {
+          console.error(error);
+          store.cards = [];
+        })
+        .finally(() => {
+          this.isLoading = false;
+        });
     },
 
     handleChange(selectedArchetype) {
@@ -34,11 +46,16 @@ export default {
 </script>
 
 <template>
+  <AppLoader loadingText="Loading Cards" v-if="isLoading" />
   <AppHeader />
-  <BaseSelect @archetype-selected="handleChange" />
+  <BaseSelect class="select_archetype" @archetype-selected="handleChange" />
   <AppMain />
 </template>
 
 <style lang="scss">
 @use "./assets/scss/style.scss";
+
+.select_archetype {
+  margin-left: 100px;
+}
 </style>
