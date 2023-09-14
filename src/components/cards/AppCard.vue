@@ -1,7 +1,7 @@
 <script>
 export default {
   props: {
-    image_url_small: String,
+    image_url: String,
     name: String,
     archetype: String,
   },
@@ -11,7 +11,7 @@ export default {
 <template>
   <div class="col text-center">
     <div class="card_">
-      <img :src="image_url_small" alt="" />
+      <img :src="image_url" alt="" />
       <h6>{{ name }}</h6>
       <p v-if="archetype">{{ archetype }}</p>
       <p v-else class="text-dark px-2">Archetipo non definito</p>

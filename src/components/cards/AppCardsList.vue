@@ -22,7 +22,7 @@ export default {
         <AppCard
           v-for="card in store.cards"
           :key="card.id"
-          :image_url_small="card.card_images[0].image_url_small"
+          :image_url="card.card_images[0].image_url"
           :name="card.name"
           :archetype="card.archetype"
         />
